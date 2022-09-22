@@ -1,4 +1,4 @@
-package com.openstack.openstackapi.model;
+package com.openstack.openstackapi.entity;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -17,7 +17,7 @@ import java.util.Collection;
 @AllArgsConstructor
 @Table(name = "TB_USER")
 @Entity
-public class User implements UserDetails {
+public class UserEntity implements UserDetails {
 
     @Id
     private Long userNo;
