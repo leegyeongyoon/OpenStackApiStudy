@@ -43,6 +43,8 @@ public class SecurityConfig {
                 "/swagger-ui**",
                 "/swagger-ui/**",
                 "/v2/api-docs", "/configuration/**", "/swagger*/**", "/webjars/**",
+                "/h2-console**",
+                "/h2-console/**",
                 "" // 임시
         );
     }
