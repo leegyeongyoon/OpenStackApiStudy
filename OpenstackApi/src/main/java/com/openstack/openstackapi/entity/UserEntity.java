@@ -6,11 +6,10 @@ import lombok.NoArgsConstructor;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
+import java.util.ArrayList;
 import java.util.Collection;
+import java.util.List;
 
 @Data
 @NoArgsConstructor
@@ -25,6 +24,14 @@ public class UserEntity implements UserDetails {
     @Column(name = "USER_ID",nullable = false,unique = true)
     private String userId;
 
+    @Column(name = "PASSWORD",nullable = false)
+    private String password;
+
+    @Column
+    @ElementCollection
+    private List<String> roles = new ArrayList<>();
+
+
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
         return null;
@@ -32,7 +39,7 @@ public class UserEntity implements UserDetails {
 
     @Override
     public String getPassword() {
-        return null;
+        return this.password;
     }
 
     @Override

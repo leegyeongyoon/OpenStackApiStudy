@@ -28,7 +28,7 @@ public class SecurityConfig {
                 .authorizeRequests()
                 .antMatchers("/admin/**").hasRole("ADMIN")
                 .antMatchers("/user/**").hasRole("USER")
-                .antMatchers("/**").permitAll()
+//                .antMatchers("/**").permitAll()
                 .and()
                 .addFilterBefore(new JwtAuthenticationFilter(jwtTokenProvider), UsernamePasswordAuthenticationFilter.class);
                     //exception적용시
@@ -45,6 +45,7 @@ public class SecurityConfig {
                 "/v2/api-docs", "/configuration/**", "/swagger*/**", "/webjars/**",
                 "/h2-console**",
                 "/h2-console/**",
+                "/user/login/**",
                 "" // 임시
         );
     }

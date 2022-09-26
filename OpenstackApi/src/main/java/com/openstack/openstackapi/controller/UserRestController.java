@@ -15,7 +15,7 @@ public class UserRestController {
     private final UserService userService;
 
     @CrossOrigin("*")
-    @GetMapping("/admin/userList")
+    @GetMapping("/user/userList")
     private List<UserEntity> userList() {
         return userService.findAll();
     }
