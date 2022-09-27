@@ -46,6 +46,7 @@ public class SecurityConfig {
                 "/h2-console**",
                 "/h2-console/**",
                 "/user/login/**",
+                "/user/join/**",
                 "" // 임시
         );
     }
